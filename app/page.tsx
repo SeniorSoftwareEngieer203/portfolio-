@@ -30,7 +30,7 @@ export default function Portfolio() {
   const opacity2 = useTransform(scrollY, [300, 500, 700], [0, 0.5, 1]);
 
   // send email configuration
-  const [recievedEmail, setRecievedEmail] = useState("senior101868@gmail.com");
+  const [recievedEmail, setRecievedEmail] = useState("pauleangelanthony@gmail.com");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -114,7 +114,7 @@ export default function Portfolio() {
             transition={{ duration: 0.5 }}
             className="text-2xl font-bold relative"
           >
-            <span className="text-purple-500">Jupiter</span>
+            <span className="text-purple-500">Paule</span>
             <motion.div
               className="absolute -bottom-1 left-0 h-[2px] bg-purple-500"
               initial={{ width: 0 }}
@@ -320,7 +320,7 @@ export default function Portfolio() {
                 className="border-purple-500 text-purple-400 hover:bg-purple-500/10 hover:text-purple-300 flex items-center gap-2"
                 asChild
               >
-                <a href="/JUPITER-PAULE-Full-Stack-AI-Developer-resume.pdf" download>
+                <a href="/PAULE-Full-Stack-AI-Developer-resume.pdf" download>
                   <Download className="h-4 w-4" />
                   Download Resume
                 </a>
@@ -403,7 +403,7 @@ export default function Portfolio() {
                 Full-Stack Developer & AI Integration Specialist
               </h3>
               <p className="text-gray-300 mb-6">
-                I'm Jupiter, a dedicated full-stack developer with deep
+                I'm Paule, a dedicated full-stack developer with deep
                 expertise in modern web technologies like Next.js, Tailwind CSS,
                 Express.js, and advanced AI integrations including OpenAI and AI
                 Agent development. My passion lies in crafting intuitive,
@@ -715,7 +715,7 @@ export default function Portfolio() {
           >
             <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
               <a
-                href="https://github.com/jupiter221208"
+                href="https://github.com/pauleangelanthony-crypto"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -770,7 +770,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <h4 className="text-gray-400 text-sm">Email</h4>
-                    <p className="font-medium">senior101868@gmail.com</p>
+                    <p className="font-medium">pauleangelanthony@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -781,13 +781,13 @@ export default function Portfolio() {
                     <h4 className="text-gray-400 text-sm">Github</h4>
                     <motion.a
                       key="github"
-                      href="https://github.com/jupiter221208"
+                      href="https://github.com/pauleangelanthony-crypto"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
                       className="hover:text-purple-500 transition-colors font-medium"
                     >
-                      https://github.com/jupiter221208
+                      https://github.com/pauleangelanthony-crypto
                     </motion.a>
                   </div>
                 </div>
