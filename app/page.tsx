@@ -4,7 +4,7 @@ import type React from "react";
 
 import { useEffect, useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronDown, Github, Mail, Link, Download } from "lucide-react";
+import { ChevronDown, Mail, Linkedin, Github, MapPin, Download } from "lucide-react";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,7 @@ export default function Portfolio() {
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +31,7 @@ export default function Portfolio() {
   const opacity2 = useTransform(scrollY, [300, 500, 700], [0, 0.5, 1]);
 
   // send email configuration
-  const [recievedEmail, setRecievedEmail] = useState("pauleangelanthony@gmail.com");
+  const [recievedEmail, setRecievedEmail] = useState("berjitariel342@gmail.com");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -49,7 +50,14 @@ export default function Portfolio() {
       { threshold: 0.5 }
     );
 
-    const sections = [homeRef, aboutRef, skillsRef, projectsRef, contactRef];
+    const sections = [
+      homeRef,
+      aboutRef,
+      skillsRef,
+      experienceRef,
+      projectsRef,
+      contactRef,
+    ];
     sections.forEach((section) => {
       if (section.current) {
         observer.observe(section.current);
@@ -74,6 +82,7 @@ export default function Portfolio() {
     { name: "Home", ref: homeRef },
     { name: "About", ref: aboutRef },
     { name: "Skills", ref: skillsRef },
+    { name: "Experience", ref: experienceRef },
     { name: "Projects", ref: projectsRef },
     { name: "Contact", ref: contactRef },
   ];
@@ -114,7 +123,7 @@ export default function Portfolio() {
             transition={{ duration: 0.5 }}
             className="text-2xl font-bold relative"
           >
-            <span className="text-purple-500">Paule</span>
+            <span className="text-purple-500">Ariel</span>
             <motion.div
               className="absolute -bottom-1 left-0 h-[2px] bg-purple-500"
               initial={{ width: 0 }}
@@ -275,12 +284,12 @@ export default function Portfolio() {
             className="text-center"
           >
             <motion.h1 className="text-4xl md:text-7xl font-bold mb-6">
-              Creative <span className="text-purple-500">Full-Stack</span>
-              &nbsp;Developer
+              Senior <span className="text-purple-500">Full Stack</span>
+              &nbsp;SaaS Engineer
             </motion.h1>
             <motion.p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
-              Crafting immersive digital experiences with modern web
-              technologies
+              Designing and delivering production-grade SaaS platforms with
+              React, Next.js, TypeScript, Node.js, and cloud-native architecture
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -320,7 +329,7 @@ export default function Portfolio() {
                 className="border-purple-500 text-purple-400 hover:bg-purple-500/10 hover:text-purple-300 flex items-center gap-2"
                 asChild
               >
-                <a href="/PAULE-Full-Stack-AI-Developer-resume.pdf" download>
+                <a href="/Ariel-Berjit-Full-Stack-SaaS-Engineer.pdf" download>
                   <Download className="h-4 w-4" />
                   Download Resume
                 </a>
@@ -400,24 +409,25 @@ export default function Portfolio() {
               viewport={{ once: true }}
             >
               <h3 className="text-2xl font-bold mb-4">
-                Full-Stack Developer & AI Integration Specialist
+                Senior Full Stack SaaS Engineer
               </h3>
               <p className="text-gray-300 mb-6">
-                I'm Paule, a dedicated full-stack developer with deep
-                expertise in modern web technologies like Next.js, Tailwind CSS,
-                Express.js, and advanced AI integrations including OpenAI and AI
-                Agent development. My passion lies in crafting intuitive,
-                responsive, and performant applications that seamlessly blend
-                robust backend functionality with engaging front-end
-                experiences.
+                I'm Ariel Berjit, a Senior Full Stack SaaS Engineer based in
+                Bacolod City, Philippines, with 10+ years of experience
+                designing, building, and delivering production-grade web
+                applications, SaaS platforms, dashboards, and cloud-native
+                systems. I specialize in React, Next.js, TypeScript, Node.js,
+                Express, GraphQL, and REST APIs, with a strong focus on scalable
+                frontend architecture and API-driven platforms.
               </p>
               <p className="text-gray-300 mb-8">
-                Combining technical proficiency and creative problem-solving, I
-                consistently deliver scalable solutions using Python, Node.js,
-                MongoDB, PostgreSQL, Docker, and ComfyUI. Driven to stay ahead
-                of technological trends, I continually expand my skillset to
-                ensure every project exceeds client expectations and delights
-                users.
+                I transform product requirements into polished, responsive, and
+                maintainable SaaS products from MVP through production
+                deployment. I have hands-on experience with AWS, GCP,
+                PostgreSQL, MongoDB, Prisma, and CI/CD pipelines, plus modern
+                AI-assisted development workflows using ChatGPT, Claude, and
+                Cursor to accelerate delivery while maintaining engineering
+                discipline.
               </p>
               <div className="flex flex-wrap gap-4 items-center">
                 <div className="bg-gray-800 px-4 py-2 rounded-full">
@@ -425,19 +435,19 @@ export default function Portfolio() {
                   Experience
                 </div>
                 <div className="bg-gray-800 px-4 py-2 rounded-full">
-                  <span className="text-purple-500 font-medium">40+</span>&nbsp;
-                  Projects Completed
+                  <span className="text-purple-500 font-medium">3</span>&nbsp;
+                  Global Engineering Teams
                 </div>
                 <div className="bg-gray-800 px-4 py-2 rounded-full">
-                  <span className="text-purple-500 font-medium">30+</span> Happy
-                  Clients
+                  <span className="text-purple-500 font-medium">B.Sc.</span>
+                  &nbsp;Computer Science
                 </div>
                 <Button
                   size="lg"
                   className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2"
                   asChild
                 >
-                  <a href="/resume.pdf" download>
+                  <a href="/Ariel-Berjit-Full-Stack-SaaS-Engineer.pdf" download>
                     <Download className="h-4 w-4" />
                     Download Resume
                   </a>
@@ -486,17 +496,18 @@ export default function Portfolio() {
               <h3 className="text-2xl font-bold mb-6">Technical Skills</h3>
 
               {[
-                { name: "Next.js", level: 95 },
-                { name: "Tailwind CSS", level: 92 },
+                { name: "React.js", level: 95 },
+                { name: "Next.js", level: 94 },
+                { name: "TypeScript", level: 93 },
+                { name: "Node.js", level: 91 },
                 { name: "Express.js", level: 90 },
-                { name: "AI Agent", level: 88 },
-                { name: "OpenAI", level: 87 },
-                { name: "ComfyUI", level: 85 },
-                { name: "Python", level: 84 },
-                { name: "Node.js", level: 79 },
-                { name: "MongoDB", level: 76 },
-                { name: "PostgreSQL", level: 75 },
-                { name: "Docker", level: 72 },
+                { name: "GraphQL", level: 87 },
+                { name: "REST APIs", level: 90 },
+                { name: "Tailwind CSS", level: 90 },
+                { name: "PostgreSQL", level: 86 },
+                { name: "MongoDB", level: 85 },
+                { name: "Prisma ORM", level: 83 },
+                { name: "AWS / GCP", level: 82 },
               ].map((skill, index) => (
                 <div key={skill.name} className="mb-6">
                   <div className="flex justify-between mb-2">
@@ -524,13 +535,13 @@ export default function Portfolio() {
               className="grid grid-cols-2 gap-6"
             >
               {[
-                { name: "Tailwind CSS", icon: "🎨" },
-                { name: "Framer Motion", icon: "✨" },
-                { name: "Next.js", icon: "🔄" },
-                { name: "Express.js", icon: "📊" },
-                { name: "ComfyUI", icon: "🖌️" },
-                { name: "Git", icon: "🔄" },
-                { name: "AI Agent", icon: "📱" },
+                { name: "SaaS Architecture", icon: "🏗️" },
+                { name: "shadcn/ui", icon: "🎨" },
+                { name: "RBAC & Auth", icon: "🔐" },
+                { name: "Microservices", icon: "🧩" },
+                { name: "CI/CD Pipelines", icon: "🔄" },
+                { name: "Docker", icon: "🐳" },
+                { name: "AI-Assisted Dev", icon: "🤖" },
                 { name: "Performance Optimization", icon: "⚡" },
               ].map((skill) => (
                 <motion.div
@@ -544,6 +555,145 @@ export default function Portfolio() {
               ))}
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section
+        id="experience"
+        ref={experienceRef}
+        className="min-h-screen flex items-center justify-center relative py-20"
+      >
+        <motion.div className="absolute top-0 left-0 w-full h-full z-0">
+          <div className="absolute top-32 left-20 w-72 h-72 rounded-full bg-purple-500/20 blur-3xl" />
+          <div className="absolute bottom-24 right-24 w-80 h-80 rounded-full bg-indigo-500/20 blur-3xl" />
+        </motion.div>
+
+        <div className="container mx-auto px-4 z-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Work <span className="text-purple-500">Experience</span>
+            </h2>
+            <div className="w-20 h-1 bg-purple-500 mx-auto mb-6" />
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              10+ years building scalable SaaS platforms and cloud-native systems
+              across global engineering teams.
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto relative">
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent hidden md:block" />
+
+            {[
+              {
+                company: "Apex Fintech Solutions",
+                role: "Senior Full Stack Engineer",
+                stack: "React / TypeScript / Node.js / SaaS Platforms",
+                period: "10/2022 – 02/2026",
+                location: "Remote",
+                points: [
+                  "Designed and delivered scalable SaaS applications using React, TypeScript, Node.js, and cloud-native architectures supporting complex, high-volume business workflows.",
+                  "Architected API-driven platforms with clean separation between frontend, backend, and data layers using Node.js, Express, GraphQL, and REST APIs.",
+                  "Implemented authentication, authorization, and access controls for secure multi-user SaaS environments, and designed optimized PostgreSQL/MongoDB schemas.",
+                  "Managed AWS environments, deployment pipelines, and monitoring, and led architecture discussions, code reviews, and technical improvements.",
+                ],
+              },
+              {
+                company: "Endava",
+                role: "Senior Full Stack Engineer",
+                stack: "React / TypeScript / Node.js",
+                period: "07/2020 – 08/2022",
+                location: "Remote",
+                points: [
+                  "Developed scalable full-stack SaaS-style applications with React, TypeScript, Node.js, and cloud technologies for complex business requirements.",
+                  "Built responsive dashboards with reusable component architectures and clean, modular frontend structures with optimized state management.",
+                  "Designed backend services using Node.js, Express, and REST APIs, plus asynchronous processing and background jobs for high-throughput workflows.",
+                  "Optimized MongoDB and relational database models to improve query performance, scalability, and data reliability.",
+                ],
+              },
+              {
+                company: "Thoughtworks",
+                role: "Full Stack Developer",
+                stack: "React / JavaScript / TypeScript / Node.js",
+                period: "09/2015 – 06/2020",
+                location: "Remote",
+                points: [
+                  "Developed modern web applications using React, JavaScript, TypeScript, and backend technologies, delivering scalable, maintainable solutions.",
+                  "Built reusable frontend components and responsive interfaces following component-based architecture principles.",
+                  "Designed backend APIs, integrations, and business services with Node.js, and optimized database schemas for efficient data access.",
+                  "Improved legacy systems through refactoring, testing improvements, and performance optimization while supporting continuous delivery practices.",
+                ],
+              },
+            ].map((job, index) => (
+              <motion.div
+                key={job.company}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * index }}
+                viewport={{ once: true }}
+                className={`relative md:w-1/2 mb-10 md:mb-12 ${
+                  index % 2 === 0
+                    ? "md:pr-10 md:text-right md:ml-0"
+                    : "md:pl-10 md:ml-auto"
+                }`}
+              >
+                <div
+                  className={`absolute top-6 w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_12px_rgba(139,92,246,0.8)] hidden md:block ${
+                    index % 2 === 0
+                      ? "right-0 translate-x-1/2"
+                      : "left-0 -translate-x-1/2"
+                  }`}
+                />
+                <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6 hover:border-purple-500/50 transition-colors">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                    <h3 className="text-xl font-bold">{job.company}</h3>
+                    <span className="text-xs text-purple-300 bg-purple-500/20 px-3 py-1 rounded-full">
+                      {job.location}
+                    </span>
+                  </div>
+                  <p className="text-purple-400 font-medium">{job.role}</p>
+                  <p className="text-gray-500 text-sm mb-1">{job.stack}</p>
+                  <p className="text-gray-400 text-sm mb-4">{job.period}</p>
+                  <ul className="space-y-2 text-left">
+                    {job.points.map((point, i) => (
+                      <li
+                        key={i}
+                        className="text-gray-300 text-sm flex gap-2"
+                      >
+                        <span className="text-purple-500 mt-1">▹</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto mt-8"
+          >
+            <div className="bg-gray-900/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6 text-center">
+              <h3 className="text-lg font-bold mb-1">
+                <span className="text-purple-500">Education</span>
+              </h3>
+              <p className="text-gray-300">
+                B.Sc. in Computer Science - Singapore Institute of Technology
+                (SIT)
+              </p>
+              <p className="text-gray-500 text-sm">08/2012 – 07/2015</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -770,7 +920,25 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <h4 className="text-gray-400 text-sm">Email</h4>
-                    <p className="font-medium">pauleangelanthony@gmail.com</p>
+                    <p className="font-medium">berjitariel342@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
+                    <Linkedin className="h-5 w-5 text-purple-500" />
+                  </div>
+                  <div>
+                    <h4 className="text-gray-400 text-sm">LinkedIn</h4>
+                    <motion.a
+                      key="linkedin"
+                      href="https://linkedin.com/in/ariel-berjit-a29a41405"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ y: -5 }}
+                      className="hover:text-purple-500 transition-colors font-medium"
+                    >
+                      linkedin.com/in/ariel-berjit-a29a41405
+                    </motion.a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -778,35 +946,26 @@ export default function Portfolio() {
                     <Github className="h-5 w-5 text-purple-500" />
                   </div>
                   <div>
-                    <h4 className="text-gray-400 text-sm">Github</h4>
+                    <h4 className="text-gray-400 text-sm">GitHub</h4>
                     <motion.a
                       key="github"
-                      href="https://github.com/pauleangelanthony-crypto"
+                      href="https://github.com/jupiter221208"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ y: -5 }}
                       className="hover:text-purple-500 transition-colors font-medium"
                     >
-                      https://github.com/pauleangelanthony-crypto
+                      github.com/jupiter221208
                     </motion.a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
-                    <Link className="h-5 w-5 text-purple-500" />
+                    <MapPin className="h-5 w-5 text-purple-500" />
                   </div>
                   <div>
-                    <h4 className="text-gray-400 text-sm">Website</h4>
-                    <motion.a
-                      key="website"
-                      href="https://jupiter-rouge.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -5 }}
-                      className="hover:text-purple-500 transition-colors font-medium"
-                    >
-                      https://jupiter-rouge.vercel.app/
-                    </motion.a>
+                    <h4 className="text-gray-400 text-sm">Location</h4>
+                    <p className="font-medium">Bacolod City, Philippines</p>
                   </div>
                 </div>
               </div>
@@ -913,8 +1072,8 @@ export default function Portfolio() {
               className="mb-4 md:mb-0"
             >
               <div className="text-2xl font-bold">
-                <span className="text-purple-500">Jupiter</span>
-                &nbsp;Portfolio
+                <span className="text-purple-500">Ariel</span>
+                &nbsp;Berjit
               </div>
             </motion.div>
             <motion.div
@@ -924,7 +1083,7 @@ export default function Portfolio() {
               viewport={{ once: true }}
               className="text-gray-400 text-sm"
             >
-              © {new Date().getFullYear()} Jupiter Portfolio. All rights
+              © {new Date().getFullYear()} Ariel Berjit. All rights
               reserved.
             </motion.div>
           </div>

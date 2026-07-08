@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Paule's portfolio",
-  description: "Paule's personal portfolio showcasing full stack development",
+  title: "Ariel Berjit | Senior Full Stack SaaS Engineer",
+  description:
+    "Portfolio of Ariel Berjit, a Senior Full Stack SaaS Engineer with 10+ years of experience building React, Next.js, TypeScript, and Node.js cloud-native platforms.",
   icons: {
     icon: [{ url: "/logo.svg" }],
     apple: [{ url: "/logo.svg" }],
